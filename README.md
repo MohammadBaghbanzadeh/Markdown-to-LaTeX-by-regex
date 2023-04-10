@@ -7,7 +7,7 @@ This is a Python program that converts various math tags and markdown tags from 
 1. Clone the repository to your local machine
 2. Install the necessary packages (if any)
 3. Open `wiki.txt` and replace the contents with the desired Wikipedia page's text
-4. Run the Python script `math_converter.py`
+4. Run the Python script `MD_to_LaTeX.py`
 5. The output will be saved as `output.txt` in the same directory
 
 ## Supported Tags
