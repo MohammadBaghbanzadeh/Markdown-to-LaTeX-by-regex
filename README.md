@@ -1,40 +1,33 @@
-Convert Wikipedia Mathematical Formulas to LaTeX
-This Python script converts mathematical formulas found on a Wikipedia page to LaTeX format using regular expressions. It replaces certain tags related to mathematical formulas and markdown tags with their corresponding LaTeX commands or tags.
+# Converting Wikipedia Math Text to LaTeX
 
-Requirements
-Python 3.x
-re module (built-in)
-Usage
-Clone the repository.
-Navigate to the project folder and place the text file containing the Wikipedia page content in the same directory as the Python script.
-Run the main.py file using the following command:
-python main.py
-The converted LaTeX output will be saved in a new file named output.txt.
-Details
-The script uses the following regular expressions to identify and replace various tags:
+This project is a Python script that extracts mathematical formulas from a Wikipedia page and converts them into LaTeX format using regular expressions.
 
-patterns = [
-    r'<(\/)?(math|sub|sup)>',
-    r'<math>\([^<]*\)<\/math>',
-    r'<math display="block">\([^<]*\)<\/math>',
-    r'\[\[\(.*\)\]\]',
-    r"'''.*?'''",
-    r"'''(.*?)'''",
-    r"''(.*?)''"
-]
-It then uses the following dictionary to replace each tag with its corresponding LaTeX command or tag:
+## Usage
 
-replacements = {
-    '<math>': '$',
-    '</math>': '$',
-    '<sub>': '_',
-    '</sub>': '',
-    '<sup>': '^',
-    '</sup>': '',
-    "'''": '\\textbf{',
-    "'''": '}',
-    "''": '\\textit{',
-    "''": '}',
-}
-Example
-To see an example of how the script works, the main.py file has been pre-configured to convert the mathematical formulas found on the Riemann hypothesis Wikipedia page.
+1. Clone this repository to your local machine.
+2. Install the required dependencies using `pip install -r requirements.txt`.
+3. Open the `wiki.txt` file and replace its content with the desired Wikipedia article's text (make sure it contains mathematical formulas).
+4. Run the script using `python convert.py`.
+5. The output will be saved in the `output.txt` file.
+6. Visit [LaTeX Equation Editor](https://www.latex4technics.com/) or any other LaTeX editor of your choice to generate images from the LaTeX equations in the output file.
+
+## How it works
+
+The script uses regular expressions to extract mathematical formulas and highlight text from the input text. The following tags are replaced with their corresponding LaTeX commands:
+
+- `<math>` and `</math>` tags are replaced with `$` signs.
+- `<sub>` and `</sub>` tags are replaced with `_`.
+- `<sup>` and `</sup>` tags are replaced with `^`.
+- `'''` tags are replaced with `\textbf{}`.
+- `''` tags are replaced with `\textit{}`.
+- Text inside `[[...]]` tags is highlighted using `\textbf{}`.
+
+## References
+
+The script was tested on the following Wikipedia page:
+
+- [Riemann hypothesis](https://en.wikipedia.org/wiki/Riemann_hypothesis)
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
