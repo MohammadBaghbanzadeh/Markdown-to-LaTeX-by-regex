@@ -1,33 +1,38 @@
-# Converting Wikipedia Math Text to LaTeX
+# Converting Wikipedia Math Tags to LaTeX
 
-This project is a Python script that extracts mathematical formulas from a Wikipedia page and converts them into LaTeX format using regular expressions.
+This is a Python program that converts various math tags and markdown tags from a given Wikipedia page to their respective LaTeX commands. The converted text can then be used in LaTeX documents.
 
-## Usage
+## How to Use
 
-1. Clone this repository to your local machine.
-2. Install the required dependencies using `pip install -r requirements.txt`.
-3. Open the `wiki.txt` file and replace its content with the desired Wikipedia article's text (make sure it contains mathematical formulas).
-4. Run the script using `python convert.py`.
-5. The output will be saved in the `output.txt` file.
-6. Visit [LaTeX Equation Editor](https://www.latex4technics.com/) or any other LaTeX editor of your choice to generate images from the LaTeX equations in the output file.
+1. Clone the repository to your local machine
+2. Install the necessary packages (if any)
+3. Open `wiki.txt` and replace the contents with the desired Wikipedia page's text
+4. Run the Python script `math_converter.py`
+5. The output will be saved as `output.txt` in the same directory
 
-## How it works
+## Supported Tags
 
-The script uses regular expressions to extract mathematical formulas and highlight text from the input text. The following tags are replaced with their corresponding LaTeX commands:
+The following tags are supported and converted to their LaTeX equivalents:
 
-- `<math>` and `</math>` tags are replaced with `$` signs.
-- `<sub>` and `</sub>` tags are replaced with `_`.
-- `<sup>` and `</sup>` tags are replaced with `^`.
-- `'''` tags are replaced with `\textbf{}`.
-- `''` tags are replaced with `\textit{}`.
-- Text inside `[[...]]` tags is highlighted using `\textbf{}`.
+- `<math>...</math>` (inline math)
+- `<math display="block">...</math>` (display/blocked math)
+- `<sub>...</sub>` (subscripts)
+- `<sup>...</sup>` (superscripts)
+- `'''...'''` (bold)
+- `''...''` (italic)
+- `[[...]]` (text highlighting)
 
-## References
+## File Structure
 
-The script was tested on the following Wikipedia page:
+- `math_converter.py`: the main Python script 
+- `wiki.txt`: input file containing the text from the chosen Wikipedia page
+- `output.txt`: output file containing the converted text in LaTeX format
+- `regex_explanations.txt`: explanation of each regex used in the code
 
-- [Riemann hypothesis](https://en.wikipedia.org/wiki/Riemann_hypothesis)
+## Credits
 
-## License
+This project was created by Mohammad Baghbanzadeh, 9812223158.
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+## Source
+
+The text used for conversion is taken from the Wikipedia page on [Riemann Hypothesis](https://en.wikipedia.org/wiki/Riemann_hypothesis).
