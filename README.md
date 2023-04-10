@@ -31,7 +31,7 @@ The following tags are supported and converted to their LaTeX equivalents:
 
 ## Credits
 
-This project was created by Mohammad Baghbanzadeh, 9812223158.
+This project was created by Mohammad Baghbanzadeh.
 
 ## Source
 
